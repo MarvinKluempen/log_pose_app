@@ -1,0 +1,17 @@
+{
+  "name": "log-pose-app",
+  "version": "1.0.0",
+  "description": "One Piece Log Pose inspired compass app for pub crawl",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js"
+  },
+  "keywords": ["compass", "geolocation", "one-piece"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}

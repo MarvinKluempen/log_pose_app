@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Log Pose - Kompass</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Status Header -->
+        <div class="header">
+            <div class="status-indicator" id="statusIndicator">
+                <span class="status-dot"></span>
+                <span id="statusText">Verbinde...</span>
+            </div>
+        </div>
+
+        <!-- Kompass -->
+        <div class="compass-container">
+            <div class="compass-outer-ring"></div>
+            <div class="compass-middle-ring"></div>
+            <div class="compass" id="compass">
+                <div class="compass-face">
+                    <!-- Innere Ringe -->
+                    <div class="inner-ring ring-1"></div>
+                    <div class="inner-ring ring-2"></div>
+                    <div class="inner-ring ring-3"></div>
+                    
+                    <!-- Highlight -->
+                    <div class="compass-highlight"></div>
+                    
+                    <!-- Nadel -->
+                    <div class="needle" id="needle">
+                        <div class="needle-top"></div>
+                        <div class="needle-bottom"></div>
+                    </div>
+                    
+                    <!-- Zentrum -->
+                    <div class="compass-center"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info -->
+        <div class="info">
+            <div class="destination" id="destination">
+                <div class="destination-label">Nächstes Ziel</div>
+                <div class="destination-name" id="destinationName">Lade...</div>
+            </div>
+            
+            <div class="distance-info" id="distanceInfo">
+                <div class="distance">
+                    <span class="distance-value" id="distanceValue">---</span>
+                    <span class="distance-unit">m</span>
+                </div>
+                <div class="direction" id="directionText">---</div>
+            </div>
+        </div>
+
+        <!-- Fehler Overlay -->
+        <div class="error-overlay" id="errorOverlay">
+            <div class="error-content">
+                <div class="error-icon">📍</div>
+                <h2>GPS-Zugriff benötigt</h2>
+                <p id="errorMessage">Bitte erlaube den Zugriff auf deinen Standort, um den Kompass zu nutzen.</p>
+                <button class="retry-button" id="retryButton">Erneut versuchen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

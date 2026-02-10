@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Pose - Admin Panel</title>
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🧭 Log Pose Admin</h1>
+            <p class="subtitle">Junggesellenabschied Tour Control</p>
+        </header>
+
+        <!-- Login Section -->
+        <div class="login-section" id="loginSection">
+            <div class="login-box">
+                <h2>Admin Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="passwordInput">Passwort</label>
+                        <input 
+                            type="password" 
+                            id="passwordInput" 
+                            placeholder="Passwort eingeben"
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="btn btn-primary">Anmelden</button>
+                    <div class="error-message" id="loginError"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Admin Panel -->
+        <div class="admin-panel" id="adminPanel" style="display: none;">
+            <!-- Current Location -->
+            <div class="current-location">
+                <h2>Aktuelle Location</h2>
+                <div class="location-card active" id="currentLocationCard">
+                    <div class="location-icon">📍</div>
+                    <div class="location-info">
+                        <div class="location-name" id="currentLocationName">Lade...</div>
+                        <div class="location-coords" id="currentLocationCoords">---</div>
+                    </div>
+                    <div class="location-status">
+                        <span class="status-badge">AKTIV</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Locations List -->
+            <div class="locations-section">
+                <h2>Alle Locations</h2>
+                <div class="locations-list" id="locationsList">
+                    <!-- Wird dynamisch gefüllt -->
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="actions-section">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <button class="action-btn" id="nextLocationBtn">
+                        <span class="action-icon">⏭️</span>
+                        <span>Nächste Location</span>
+                    </button>
+                    <button class="action-btn" id="prevLocationBtn">
+                        <span class="action-icon">⏮️</span>
+                        <span>Vorherige Location</span>
+                    </button>
+                    <button class="action-btn" id="resetBtn">
+                        <span class="action-icon">🔄</span>
+                        <span>Zurück zum Start</span>
+                    </button>
+                    <button class="action-btn" id="logoutBtn">
+                        <span class="action-icon">🚪</span>
+                        <span>Abmelden</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-section">
+                <h2>Tour Status</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Gesamt</div>
+                        <div class="stat-value" id="totalLocations">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Aktuell</div>
+                        <div class="stat-value" id="currentIndex">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Verbleibend</div>
+                        <div class="stat-value" id="remainingLocations">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
