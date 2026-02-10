@@ -6,6 +6,8 @@ let currentPosition = null;
 let targetLocation = null;
 let watchId = null;
 let updateInterval = null;
+let deviceHeading = 0; // Gerät-Ausrichtung in Grad
+let compassSupported = false;
 
 // DOM Elemente
 const statusIndicator = document.getElementById('statusIndicator');
@@ -25,6 +27,20 @@ function init() {
     // Event Listeners
     retryButton.addEventListener('click', requestLocation);
     
+    // Device Orientation für Kompass-Rotation
+    if (window.DeviceOrientationEvent) {
+        // iOS 13+ braucht Permission
+        if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+            // Zeige Button für iOS Permission
+            showCompassPermission();
+        } else {
+            // Android oder ältere iOS Versionen
+            startCompass();
+        }
+    } else {
+        console.log('⚠️ Device Orientation nicht unterstützt');
+    }
+    
     // Location anfordern
     requestLocation();
     
@@ -33,6 +49,57 @@ function init() {
     
     // Initial laden
     fetchTargetLocation();
+}
+
+// Kompass Permission für iOS
+function showCompassPermission() {
+    // Erstelle Button für Permission
+    const permBtn = document.createElement('button');
+    permBtn.textContent = 'Kompass aktivieren';
+    permBtn.className = 'retry-button';
+    permBtn.style.position = 'fixed';
+    permBtn.style.bottom = '20px';
+    permBtn.style.left = '50%';
+    permBtn.style.transform = 'translateX(-50%)';
+    permBtn.style.zIndex = '1000';
+    
+    permBtn.addEventListener('click', async () => {
+        try {
+            const permission = await DeviceOrientationEvent.requestPermission();
+            if (permission === 'granted') {
+                startCompass();
+                permBtn.remove();
+            }
+        } catch (error) {
+            console.error('Kompass Permission Fehler:', error);
+        }
+    });
+    
+    document.body.appendChild(permBtn);
+}
+
+// Kompass starten
+function startCompass() {
+    window.addEventListener('deviceorientationabsolute', handleOrientation, true);
+    window.addEventListener('deviceorientation', handleOrientation, true);
+    compassSupported = true;
+    console.log('✅ Kompass aktiviert');
+}
+
+// Device Orientation Handler
+function handleOrientation(event) {
+    // Alpha = Kompass-Richtung (0-360°)
+    // 0° = Norden, 90° = Osten, 180° = Süden, 270° = Westen
+    
+    if (event.webkitCompassHeading) {
+        // iOS
+        deviceHeading = event.webkitCompassHeading;
+    } else if (event.alpha !== null) {
+        // Android
+        deviceHeading = 360 - event.alpha;
+    }
+    
+    updateCompass();
 }
 
 // GPS-Zugriff anfordern
@@ -114,7 +181,7 @@ function updateCompass() {
         return;
     }
     
-    // Winkel berechnen
+    // Winkel zum Ziel berechnen (Bearing)
     const bearing = calculateBearing(
         currentPosition.lat,
         currentPosition.lng,
@@ -130,8 +197,13 @@ function updateCompass() {
         targetLocation.lng
     );
     
+    // Nadel-Rotation: Bearing minus Device-Ausrichtung
+    // Wenn Gerät nach Norden zeigt (0°) und Ziel ist bei 90° (Osten),
+    // dann zeigt Nadel 90° nach rechts
+    const needleRotation = bearing - deviceHeading;
+    
     // Nadel rotieren
-    needle.style.transform = `rotate(${bearing}deg)`;
+    needle.style.transform = `rotate(${needleRotation}deg)`;
     
     // Distanz anzeigen
     if (distance < 1000) {
