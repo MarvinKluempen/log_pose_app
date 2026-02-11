@@ -444,7 +444,7 @@ body::before {
     bottom: 55px;              /* gleiche Höhe wie Distanz */
     right: 18%;                /* weiter nach rechts */
     transform: translateX(50%);
-    font-size: 64px;
+    font-size: 55px;
     font-weight: 700;
     font-family: 'Pirata One', cursive;
     color: #8B0000;
@@ -459,14 +459,14 @@ body::before {
 
 /* ---------- One-Piece-Style: "NÄCHSTES ZIEL" ---------- */
 .destination-label {
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', sans-serif;
     font-size: 18px;
     letter-spacing: 6px;
     text-transform: uppercase;
     color: #f3ecd2; /* Pergament / Altweiß */
     margin-bottom: 6px;
     position: relative;
-    top: -10px; /* leicht nach oben */
+    top: -15px; /* leicht nach oben */
 
     text-shadow:
         2px 2px 0px rgba(0, 0, 0, 0.85),
@@ -476,12 +476,12 @@ body::before {
 
 /* ---------- One-Piece-Style: Zielname ---------- */
 .destination-name {
-    font-family: 'Pirata One', cursive;
+    font-family: 'Pirata One', fantasy;
     font-size: 40px;
     letter-spacing: 3px;
-    color: #f8f1dc; /* warmes Pergamentweiß */
+    color: #e0dac8; /* warmes Pergamentweiß */
     position: relative;
-    top: -10px;
+    top: -15px;
 
     text-shadow:
         4px 4px 0px rgba(0, 0, 0, 0.95),
