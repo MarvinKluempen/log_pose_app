@@ -5,6 +5,9 @@
     box-sizing: border-box;
 }
 
+/* Piraten-Font importieren */
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@400;700&display=swap');
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-image: url('background.png');
@@ -44,14 +47,14 @@ body::before {
 /* Header */
 .header {
     position: fixed;
-    top: 0;
+    bottom: 30px; /* Von top nach bottom */
     left: 0;
     right: 0;
     padding: 20px;
     display: flex;
     justify-content: center;
     z-index: 100;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    background: none; /* Kein Gradient mehr */
 }
 
 .status-indicator {
@@ -260,53 +263,77 @@ body::before {
 
 .destination {
     margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(139, 0, 0, 0.5);
 }
 
 .destination-label {
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.7;
+    letter-spacing: 3px;
+    opacity: 0.9;
     margin-bottom: 8px;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .destination-name {
-    font-size: 24px;
-    font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 28px;
+    font-weight: 700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    font-family: 'Pirata One', cursive;
+    letter-spacing: 2px;
 }
 
 .distance-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: none; /* Box verstecken */
 }
 
+/* Neue Position für Distanz und Richtung - ins Spruchband */
 .distance {
+    position: fixed;
+    bottom: 140px;
+    left: 50%;
+    transform: translateX(-120px); /* Links vom Lenkrad */
     display: flex;
     align-items: baseline;
-    gap: 4px;
+    gap: 8px;
+    z-index: 10;
 }
 
 .distance-value {
-    font-size: 32px;
+    font-size: 48px;
     font-weight: 700;
+    font-family: 'Pirata One', cursive;
+    color: #D32F2F;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    -webkit-text-stroke: 1px #8B0000;
 }
 
 .distance-unit {
-    font-size: 16px;
-    opacity: 0.7;
+    font-size: 24px;
+    opacity: 0.9;
+    font-family: 'Pirata One', cursive;
+    color: #D32F2F;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 .direction {
-    font-size: 14px;
-    opacity: 0.8;
+    position: fixed;
+    bottom: 140px;
+    right: 50%;
+    transform: translateX(120px); /* Rechts vom Lenkrad */
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Pirata One', cursive;
+    color: #D32F2F;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    -webkit-text-stroke: 1px #8B0000;
+    z-index: 10;
 }
 
 /* Error Overlay */
