@@ -1,3 +1,8 @@
+/* ========================================
+   VALENTINE'S COFFEE THEME
+   Cute / Cozy / Romantic Style
+   ======================================== */
+
 /* Reset & Base */
 * {
     margin: 0;
@@ -5,11 +10,11 @@
     box-sizing: border-box;
 }
 
-/* Piraten-Font importieren */
-@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@400;700&display=swap');
+/* Cute Romantic Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;500;700&family=Dancing+Script:wght@400;700&display=swap');
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     background-image: url('background.png');
     background-size: cover;
     background-position: center;
@@ -17,11 +22,11 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
     overflow: hidden;
-    color: #fff;
+    color: #5d4037;
     -webkit-font-smoothing: antialiased;
 }
 
-/* Overlay für bessere Lesbarkeit */
+/* Soft Overlay */
 body::before {
     content: '';
     position: fixed;
@@ -29,7 +34,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(180deg, rgba(255, 240, 245, 0.3) 0%, rgba(255, 228, 225, 0.4) 100%);
     z-index: 0;
 }
 
@@ -44,59 +49,26 @@ body::before {
     z-index: 1;
 }
 
-/* Header - Komplett entfernt */
+/* Header */
 .header {
     display: none;
 }
 
-.status-indicator {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #ffc107;
-    animation: pulse 2s ease-in-out infinite;
-}
-
-.status-indicator.active .status-dot {
-    background: #4caf50;
-}
-
-.status-indicator.error .status-dot {
-    background: #f44336;
-    animation: none;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-/* Kompass Container */
+/* Kompass Container - Cozy Style */
 .compass-container {
     position: relative;
     width: 320px;
     height: 320px;
     margin: 40px 0;
+    filter: drop-shadow(0 8px 20px rgba(139, 69, 19, 0.2));
 }
 
-/* Äußere Ringe */
+/* Äußere Ringe - Soft Brown */
 .compass-outer-ring,
 .compass-middle-ring {
     position: absolute;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(160, 82, 45, 0.3);
 }
 
 .compass-outer-ring {
@@ -105,6 +77,7 @@ body::before {
     top: 0;
     left: 0;
     animation: rotate-slow 60s linear infinite;
+    border-color: rgba(210, 180, 140, 0.4);
 }
 
 .compass-middle-ring {
@@ -112,11 +85,11 @@ body::before {
     height: 90%;
     top: 5%;
     left: 5%;
-    border-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(139, 69, 19, 0.3);
     animation: rotate-slow 45s linear infinite reverse;
 }
 
-/* Hauptkompass */
+/* Hauptkompass - Coffee Style */
 .compass {
     position: absolute;
     width: 80%;
@@ -130,20 +103,20 @@ body::before {
     position: relative;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #4fc3dc 0%, #3a9fb5 100%);
+    background: linear-gradient(135deg, #d7ccc8 0%, #bcaaa4 100%);
     border-radius: 50%;
     box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.3),
-        inset 0 2px 10px rgba(255, 255, 255, 0.2),
-        inset 0 -2px 10px rgba(0, 0, 0, 0.2);
-    border: 4px solid #d4a574;
+        0 10px 30px rgba(93, 64, 55, 0.3),
+        inset 0 2px 15px rgba(255, 255, 255, 0.4),
+        inset 0 -2px 10px rgba(139, 69, 19, 0.2);
+    border: 5px solid #8d6e63;
 }
 
-/* Innere Ringe */
+/* Innere Ringe - Latte Art Inspired */
 .inner-ring {
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(121, 85, 72, 0.25);
 }
 
 .ring-1 {
@@ -158,7 +131,7 @@ body::before {
     height: 70%;
     top: 15%;
     left: 15%;
-    border-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(141, 110, 99, 0.3);
 }
 
 .ring-3 {
@@ -166,22 +139,22 @@ body::before {
     height: 50%;
     top: 25%;
     left: 25%;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(160, 82, 45, 0.2);
 }
 
-/* Highlight */
+/* Highlight - Creamy Foam */
 .compass-highlight {
     position: absolute;
     width: 40%;
     height: 40%;
     top: 10%;
     left: 15%;
-    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(ellipse at center, rgba(255, 250, 240, 0.5) 0%, rgba(255, 250, 240, 0) 70%);
     border-radius: 50%;
-    filter: blur(10px);
+    filter: blur(12px);
 }
 
-/* Nadel */
+/* Nadel - Heart Inspired */
 .needle {
     position: absolute;
     width: 8px;
@@ -200,10 +173,10 @@ body::before {
     transform: translateX(-50%);
     width: 0;
     height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 80px solid #d32f2f;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 85px solid #ff6b9d;
+    filter: drop-shadow(0 3px 6px rgba(255, 107, 157, 0.4));
 }
 
 .needle-bottom {
@@ -213,37 +186,40 @@ body::before {
     transform: translateX(-50%);
     width: 0;
     height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 80px solid #f5f5f5;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 85px solid #ffe4e1;
+    filter: drop-shadow(0 3px 6px rgba(93, 64, 55, 0.3));
 }
 
-/* Zentrum */
+/* Zentrum - Coffee Bean */
 .compass-center {
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #fff;
+    background: #6d4c41;
     border-radius: 50%;
-    border: 3px solid #333;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 4px solid #4e342e;
+    box-shadow: 
+        0 3px 10px rgba(78, 52, 46, 0.4),
+        inset 0 2px 5px rgba(255, 255, 255, 0.2);
     z-index: 10;
 }
 
 .compass-center::before {
     content: '';
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #d32f2f;
+    background: #ff6b9d;
     border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 107, 157, 0.6);
 }
 
 /* Info Section */
@@ -256,80 +232,124 @@ body::before {
 .destination {
     margin-bottom: 20px;
     text-align: center;
+    background: rgba(255, 250, 250, 0.85);
+    padding: 20px 30px;
+    border-radius: 20px;
+    border: 3px solid rgba(255, 192, 203, 0.5);
+    box-shadow: 
+        0 8px 20px rgba(255, 182, 193, 0.3),
+        inset 0 2px 10px rgba(255, 255, 255, 0.5);
 }
 
 .destination-label {
-    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-bottom: 10px;
-    font-family: 'Cinzel', serif;
+    color: #d81b60;
+    margin-bottom: 8px;
     font-weight: 700;
-    color: #FFD700; /* Gold */
-    text-shadow: 
-        3px 3px 0px rgba(0, 0, 0, 0.9),
-        -1px -1px 0px rgba(139, 0, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(255, 182, 193, 0.5);
 }
 
 .destination-name {
-    font-size: 36px;
-    font-weight: 700;
-    font-family: 'Pirata One', cursive;
-    letter-spacing: 2px;
-    color: #8B0000; /* Dunkles Rot */
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #6d4c41;
     text-shadow: 
-        4px 4px 0px rgba(0, 0, 0, 0.9),
-        -2px -2px 0px rgba(255, 215, 0, 0.3);
+        2px 2px 4px rgba(255, 182, 193, 0.4),
+        -1px -1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Heart decoration */
+.destination::before {
+    content: '♥';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    color: #ff6b9d;
+    text-shadow: 0 2px 8px rgba(255, 107, 157, 0.6);
+    animation: heart-beat 1.5s ease-in-out infinite;
+}
+
+.destination::after {
+    content: '♥';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    color: #ff6b9d;
+    text-shadow: 0 2px 8px rgba(255, 107, 157, 0.6);
+    animation: heart-beat 1.5s ease-in-out infinite 0.5s;
 }
 
 .distance-info {
-    display: none; /* Box verstecken */
+    display: none;
 }
 
-/* Neue Position für Distanz und Richtung - ins Spruchband */
+/* Distanz - Cute Display */
 .distance {
     position: fixed;
-    bottom: 80px; /* Höher, näher am Lenkrad */
-    left: 25%; /* Weiter links */
+    bottom: 55px;
+    left: 18%;
     transform: translateX(-50%);
     display: flex;
     align-items: baseline;
-    gap: 5px;
+    gap: 6px;
     z-index: 10;
+    font-family: 'Pacifico', cursive;
+    background: rgba(255, 250, 250, 0.9);
+    padding: 12px 24px;
+    border-radius: 20px;
+    border: 3px solid rgba(255, 192, 203, 0.6);
+    box-shadow: 
+        0 6px 20px rgba(255, 182, 193, 0.4),
+        inset 0 2px 8px rgba(255, 255, 255, 0.6);
 }
 
 .distance-value {
-    font-size: 64px; /* Größer */
-    font-weight: 700;
-    font-family: 'Pirata One', cursive;
-    color: #8B0000; /* Dunkles Rot */
+    font-size: 44px;
+    font-weight: 400;
+    color: #d81b60;
     text-shadow: 
-        3px 3px 0px rgba(0, 0, 0, 0.9),
-        -1px -1px 0px rgba(255, 215, 0, 0.3);
-    letter-spacing: 2px;
+        2px 2px 4px rgba(255, 182, 193, 0.5),
+        -1px -1px 2px rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
 }
 
 .distance-unit {
-    font-size: 32px;
-    font-family: 'Pirata One', cursive;
-    color: #8B0000;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.9);
+    font-size: 22px;
+    color: #8d6e63;
+    text-shadow: 1px 1px 2px rgba(255, 182, 193, 0.3);
 }
 
+/* Richtung - Cozy Display */
 .direction {
     position: fixed;
-    bottom: 80px; /* Gleiche Höhe */
-    right: 25%; /* Weiter rechts */
+    bottom: 55px;
+    right: 18%;
     transform: translateX(50%);
-    font-size: 64px; /* Größer */
-    font-weight: 700;
-    font-family: 'Pirata One', cursive;
-    color: #8B0000;
-    text-shadow: 
-        3px 3px 0px rgba(0, 0, 0, 0.9),
-        -1px -1px 0px rgba(255, 215, 0, 0.3);
+    font-size: 44px;
+    font-weight: 400;
+    font-family: 'Pacifico', cursive;
+    color: #d81b60;
     letter-spacing: 2px;
     z-index: 10;
+    background: rgba(255, 250, 250, 0.9);
+    padding: 12px 28px;
+    border-radius: 20px;
+    border: 3px solid rgba(255, 192, 203, 0.6);
+    box-shadow: 
+        0 6px 20px rgba(255, 182, 193, 0.4),
+        inset 0 2px 8px rgba(255, 255, 255, 0.6);
+    text-shadow: 
+        2px 2px 4px rgba(255, 182, 193, 0.5),
+        -1px -1px 2px rgba(255, 255, 255, 0.5);
 }
 
 /* Error Overlay */
@@ -339,7 +359,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(255, 240, 245, 0.95);
     backdrop-filter: blur(10px);
     display: none;
     align-items: center;
@@ -355,6 +375,10 @@ body::before {
     text-align: center;
     padding: 40px;
     max-width: 400px;
+    background: rgba(255, 250, 250, 0.95);
+    border: 3px solid rgba(255, 192, 203, 0.6);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(255, 182, 193, 0.4);
 }
 
 .error-icon {
@@ -363,39 +387,70 @@ body::before {
 }
 
 .error-content h2 {
-    font-size: 24px;
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
     margin-bottom: 12px;
+    color: #d81b60;
 }
 
 .error-content p {
+    font-family: 'Quicksand', sans-serif;
     font-size: 16px;
-    opacity: 0.8;
+    color: #6d4c41;
     margin-bottom: 30px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .retry-button {
-    background: #4fc3dc;
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
     color: #fff;
     border: none;
     padding: 15px 40px;
     border-radius: 25px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .retry-button:hover {
-    background: #3a9fb5;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(79, 195, 220, 0.4);
+    background: linear-gradient(135deg, #ff8fab 0%, #ffb3c1 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.5);
 }
 
 /* Animations */
 @keyframes rotate-slow {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+@keyframes heart-beat {
+    0%, 100% { 
+        transform: translateX(-50%) scale(1);
+    }
+    50% { 
+        transform: translateX(-50%) scale(1.2);
+    }
+}
+
+/* Floating hearts background effect */
+@keyframes float-hearts {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) rotate(360deg);
+    }
 }
 
 /* Responsive */
@@ -405,94 +460,29 @@ body::before {
         height: 280px;
     }
     
+    .destination {
+        padding: 15px 20px;
+    }
+    
     .destination-name {
-        font-size: 28px;
+        font-size: 26px;
     }
     
     .distance-value, .direction {
-        font-size: 48px;
+        font-size: 36px;
     }
     
     .distance-unit {
-        font-size: 24px;
+        font-size: 18px;
     }
     
-    /* Distanz und Richtung näher zusammen auf kleinen Screens */
     .distance {
         left: 30%;
+        padding: 10px 18px;
     }
     
     .direction {
         right: 30%;
+        padding: 10px 22px;
     }
-}
-
-.distance {
-    position: fixed;
-    bottom: 55px;              /* tiefer im Spruchband */
-    left: 18%;                 /* weiter nach links */
-    transform: translateX(-50%);
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-    z-index: 10;
-}
-
-/* ---------- Richtung – weiter unten & weiter rechts ---------- */
-.direction {
-    position: fixed;
-    bottom: 55px;              /* gleiche Höhe wie Distanz */
-    right: 18%;                /* weiter nach rechts */
-    transform: translateX(50%);
-    font-size: 55px;
-    font-weight: 700;
-    font-family: 'Pirata One', cursive;
-    color: #8B0000;
-    letter-spacing: 2px;
-    z-index: 10;
-
-    text-shadow:
-        3px 3px 0px rgba(0, 0, 0, 0.9),
-        -1px -1px 0px rgba(255, 215, 0, 0.3);
-}
-
-
-/* ---------- One-Piece-Style: "NÄCHSTES ZIEL" ---------- */
-.destination-label {
-    font-family: 'Cinzel', sans-serif;
-    font-size: 18px;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: #f3ecd2; /* Pergament / Altweiß */
-    margin-bottom: 6px;
-    position: relative;
-    top: -25px; /* leicht nach oben */
-
-    text-shadow:
-        2px 2px 0px rgba(0, 0, 0, 0.85),
-        0px 0px 6px rgba(255, 248, 220, 0.3);
-}
-
-
-/* ---------- One-Piece-Style: Zielname ---------- */
-.destination-name {
-    font-family: 'Pirata One', cursive;
-    font-size: 40px;
-    letter-spacing: 3px;
-    color: #e0dac8; /* warmes Pergamentweiß */
-    position: relative;
-    top: -25px;
-
-    text-shadow:
-        4px 4px 0px rgba(0, 0, 0, 0.95),
-        -1px -1px 0px rgba(120, 90, 40, 0.4),
-        0px 0px 10px rgba(255, 240, 200, 0.25);
-}
-
-
-/* ---------- Optional: subtiler Papier-Hintergrund ---------- */
-.destination {
-    background: rgba(255, 248, 220, 0.04);
-    padding: 10px 18px;
-    border-radius: 4px;
 }
