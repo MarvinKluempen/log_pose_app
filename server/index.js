@@ -12,7 +12,7 @@ app.use(express.static('public'));
 
 // Datenstruktur für Locations
 let locations = [
-  { id: 1, name: "Startpunkt - Finde Crocus", lat: 51.4430, lng: 6.2659 },
+  { id: 1, name: "Cappuccino Time", lat: 51.23047926785446, lng: 6.746243947748435 },
   { id: 2, name: "Kneipe 1 - Päffgen Brauhaus", lat: 50.9388, lng: 6.9529 },
   { id: 3, name: "Kneipe 2 - Brauerei zur Malzmühle", lat: 50.9356, lng: 6.9602 },
   { id: 4, name: "Kneipe 3 - Peters Brauhaus", lat: 50.9363, lng: 6.9577 },
