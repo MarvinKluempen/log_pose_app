@@ -12,15 +12,16 @@ app.use(express.static('public'));
 
 // Datenstruktur für Locations
 let locations = [
-  { id: 1, name: "Cappuccino Time", lat: 51.23047926785446, lng: 6.746243947748435 },
-  { id: 2, name: "Kneipe 1 - Päffgen Brauhaus", lat: 50.9388, lng: 6.9529 },
-  { id: 3, name: "Kneipe 2 - Brauerei zur Malzmühle", lat: 50.9356, lng: 6.9602 },
-  { id: 4, name: "Kneipe 3 - Peters Brauhaus", lat: 50.9363, lng: 6.9577 },
-  { id: 5, name: "Kneipe 4 - Gilden im Zims", lat: 50.9385, lng: 6.9542 },
-  { id: 6, name: "Kneipe 5 - Früh am Dom", lat: 50.9412, lng: 6.9581 },
-  { id: 7, name: "Kneipe 6 - Gaffel am Dom", lat: 50.9418, lng: 6.9572 },
-  { id: 8, name: "Kneipe 7 - Sion Brauhaus", lat: 50.9402, lng: 6.9538 },
-  { id: 9, name: "Endpunkt - Heumarkt", lat: 50.9358, lng: 6.9611 }
+  { id: 1, name: "Loguetown", lat: 52.376127465576744, lng: 4.895042072177835 },
+  { id: 2, name: "Whiskey Peak", lat: 52.37428041481016, lng: 4.892295490283367 },
+  { id: 3, name: "Skypea", lat: 52.373075205287876, lng: 4.890020977152011 }, 
+  { id: 4, name: "Water 7", lat: 52.37366013011269, lng: 4.882364761670184 }, 
+  { id: 5, name: "Thriller Bark", lat: 52.37082283464927, lng: 4.889351850110737 },
+  { id: 6, name: "Impel Down", lat: 52.36925623098222, lng: 4.8908165425639645 },
+  { id: 7, name: "Wano Kuni", lat: 52.36656694252976, lng: 4.891463590761568 },
+  { id: 8, name: "Dress Rosa", lat: 52.36568038228147, lng: 4.897443378483437 }, 
+  { id: 9, name: "Elbaph", lat: 52.37401946319378, lng: 4.899401712575032 },
+  { id: 10, name: "Laughtale", lat: 50.9358, lng: 6.9611 }
 ];
 
 // Aktuell aktive Location (Index im Array, startet bei 0)
